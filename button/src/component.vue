@@ -1,5 +1,5 @@
 <template>
-  <button class="elder__button" :class="classNames" @click="onClick($event)" :disabled="isDisabled" :style="{ pointerEvents: isBusy ? 'none' : undefined }">
+  <button :type="buttonType" class="elder__button" :class="classNames" @click="onClick($event)" :disabled="isDisabled" :style="{ pointerEvents: isBusy ? 'none' : undefined }">
     <template v-if="!onState">
       <div v-if="label">{{ label }}</div>
       <div class="elder__button__icon" v-if="icon && label">
@@ -17,7 +17,7 @@
     <template v-if="onConfirmState">
       <div>{{ confirmLabel }}</div>
       <div class="elder__button__icon">
-        <fa :icon="['far', 'exclamation-triangle']" />
+        <fa :icon="['fas', 'exclamation-triangle']" />
       </div>
     </template>
     <template v-if="onErrorState">
@@ -30,11 +30,15 @@
 </template>
 
 <script>
+import './icons'
+import FaMixin from '../../global/mixins/fa'
+
 function clickAway(event) {
   if (!this.$el.contains(event.target)) this.onConfirmState = false
 }
 
 export default {
+  mixins: [FaMixin],
   name: 'button-component',
   props: {
     primary: Boolean,
@@ -86,6 +90,10 @@ export default {
     },
     isLoading() {
       return this.onLoadingState || this.loading
+    },
+    buttonType() {
+      if (this.confirm && !this.onConfirmState) return 'button'
+      return null
     },
     onState() {
       return this.onSuccessState || this.onErrorState || this.onConfirmState || this.isLoading
@@ -186,6 +194,7 @@ export default {
 
   font: inherit;
   border: 1px solid #ccc;
+  outline: none;
 
   padding: 1em 2em;
   margin: 0;
@@ -202,6 +211,10 @@ export default {
   }
 
   &:hover {
+    background-color: rgba(black, 0.2);
+  }
+
+  &:focus {
     background-color: rgba(black, 0.1);
   }
 
@@ -265,6 +278,12 @@ export default {
         $hover-color: adjust-hue(nth($state, 2), $state-adjust);
         background-color: $hover-color;
         color: guess-color($hover-color);
+      }
+
+      &:focus {
+        $focus-color: adjust-hue(nth($state, 2), $state-adjust - 7deg);
+        background-color: $focus-color;
+        color: guess-color($focus-color);
       }
 
       &:active {
