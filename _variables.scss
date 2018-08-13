@@ -1,0 +1,15 @@
+//Colors
+$primary: #3a9acd;
+$secondary: #ff773f;
+$warning: #ff773f;
+$success: #33ca62;
+$error: #e83b35;
+
+$border-radius: 3px;
+$states: (
+  ('primary', $primary, #ffffff),
+  ('secondary', $secondary, #ffffff),
+  ('warning', $warning, #ffffff),
+  ('success', $success, #ffffff),
+  ('error', $error, #ffffff)
+);

@@ -1,0 +1,28 @@
+{
+  "name": "vue-elder",
+  "version": "0.0.0-development",
+  "description": "Elder design system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElderAS/vue-elder.git"
+  },
+  "keywords": [
+    "elder",
+    "design",
+    "system"
+  ],
+  "author": "carsten@elder.no",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElderAS/vue-elder/issues"
+  },
+  "homepage": "https://github.com/ElderAS/vue-elder#readme",
+  "devDependencies": {
+    "semantic-release": "^15.9.8"
+  }
+}
