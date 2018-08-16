@@ -1,7 +1,0 @@
-@function guess-color($color) {
-  @if (lightness($color) > 65) {
-    @return $text; // Lighter backgorund, return dark color
-  } @else {
-    @return #ffffff; // Darker background, return light color
-  }
-}

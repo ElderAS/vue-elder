@@ -6,63 +6,14 @@
 
 # vue-elder
 
-## Setup
+## Documentation
+
+[See documentation here](https://elderas.github.io/vue-elder/)
 
 ### Install package
 
 ```
 npm install --save vue-elder
-```
-
-### Override default colors, etc...
-
-Regular webpack
-
-```js
-// webpack.config.js -> module.rules
-{
-  test: /\.scss$/,
-  use: [
-    'vue-style-loader',
-    'css-loader',
-    {
-      loader: 'sass-loader',
-      options: {
-        // you can also read from a file, e.g. `variables.scss`
-        data: `$color: red;`
-      }
-    }
-  ]
-}
-```
-
-Vue-cli
-
-```js
-//vue.config.js
-module.exports = {
-  css: {
-    loaderOptions: {
-      sass: {
-        // you can also read from a file, e.g. `variables.scss`
-        data: `$color: red;`,
-      },
-    },
-  },
-}
-```
-
-## Usage
-
-```js
-//Component.vue
-import { ButtonComponent } from 'vue-elder'
-
-export default {
-  components: {
-    ButtonComponent,
-  },
-}
 ```
 
 ## License

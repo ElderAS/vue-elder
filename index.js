@@ -1,3 +1,3 @@
-import { ButtonComponent } from './button'
+import { ButtonComponent, ButtonComponentInstaller } from 'vue-elder-button'
 
-export { ButtonComponent }
+export { ButtonComponent, ButtonComponentInstaller }
