@@ -24,7 +24,8 @@ module.exports = {
     ],
     lastUpdated: 'Last Updated',
   },
-  configureWebpack: (config, isServer) => {
-    config.resolve.alias['node_modules'] = path.resolve('node_modules')
+  chainWebpack: config => {
+    config.resolve.alias.set('vue', 'vue/dist/vue.common.js')
+    config.resolve.alias.set('node_modules', path.resolve('node_modules'))
   },
 }

@@ -54,6 +54,8 @@ components: {
 - [success-label](#success-label) `String`
 - [error-label](#error-label) `String`
 
+---
+
 ### primary (secondary, warning, success, error)
 
 - **Type:** `Boolean`
@@ -66,17 +68,15 @@ Give button a nice color
 
 #### Example
 
-<br>
-
-<button-component label="Primary" primary></button-component>
-<button-component label="Default"></button-component>
-
 ```html
 <button-component label="Primary" primary></button-component>
 <button-component label="Default"></button-component>
 ```
 
-<br><br><br>
+<button-component label="Primary" primary></button-component>
+<button-component label="Default"></button-component>
+
+---
 
 ### label
 
@@ -89,14 +89,13 @@ Set button label
 
 #### Example
 
-<br>
-<button-component label="Fancy label"></button-component>
-
 ```html
 <button-component label="Fancy label"></button-component>
 ```
 
-<br><br><br>
+<button-component label="Fancy label"></button-component>
+
+---
 
 ### icon
 
@@ -111,14 +110,13 @@ Make sure to [import](https://github.com/FortAwesome/vue-fontawesome#import-the-
 
 #### Example
 
-<br>
-<button-component label="Check me" :icon="['fas', 'check']"></button-component>
-
 ```html
 <button-component label="Check me" :icon="['fas', 'check']"></button-component>
 ```
 
-<br><br><br>
+<button-component label="Check me" :icon="['fas', 'check']"></button-component>
+
+---
 
 ### loading
 
@@ -132,14 +130,13 @@ Be sure to check out [promise](#promise) prop for more advanced state handling.
 
 #### Example
 
-<br>
-<button-component loading-label="I'm busy now..." loading></button-component>
-
 ```html
 <button-component loading></button-component>
 ```
 
-<br><br><br>
+<button-component loading-label="I'm busy now..." loading></button-component>
+
+---
 
 ### promise
 
@@ -152,14 +149,13 @@ Attach promises for automated state handing like loading, success and error.
 
 #### Example
 
-<br>
-<button-component loading-label="Will sync promise state..." loading></button-component>
-
 ```html
 <button-component :promise="yourPromise"></button-component>
 ```
 
-<br><br><br>
+<button-component loading-label="Will sync promise state..." loading></button-component>
+
+---
 
 ### state-timeout
 
@@ -178,7 +174,7 @@ This prop defines how many **milliseconds** the different states (success, error
 <button-component :state-timeout="4000"></button-component>
 ```
 
-<br><br><br>
+---
 
 ### confirm
 
@@ -191,14 +187,13 @@ Add an extra click to your button for confirmation.
 
 #### Example
 
-<br>
-<button-component label="Click me for demo" confirm-label="Are you sure?" confirm></button-component>
-
 ```html
 <button-component confirm></button-component>
 ```
 
-<br><br><br>
+<button-component label="Click me for demo" confirm-label="Are you sure?" confirm></button-component>
+
+---
 
 ### loading-label
 
@@ -213,14 +208,13 @@ Loading state is triggered by the [loading](#loading) or [promise](#promise) pro
 
 #### Example
 
-<br>
-<button-component loading-label="Fetching..." loading></button-component>
-
 ```html
 <button-component loading-label="Fetching..." loading></button-component>
 ```
 
-<br><br><br>
+<button-component loading-label="Fetching..." loading></button-component>
+
+---
 
 ### confirm-label
 
@@ -235,14 +229,13 @@ Confirm state is triggered by the [confirm](#confirm) prop.
 
 #### Example
 
-<br>
-<button-component confirm-label="Are you crazy?" label="Click me for demo" confirm></button-component>
-
 ```html
 <button-component confirm-label="Are you crazy?" confirm></button-component>
 ```
 
-<br><br><br>
+<button-component confirm-label="Are you crazy?" label="Click me for demo" confirm></button-component>
+
+---
 
 ### success-label
 
@@ -257,14 +250,13 @@ Success state is triggered by the [promise](#promise) prop.
 
 #### Example
 
-<br>
-<button-component label="Well done" :icon="['fas', 'check']" success></button-component>
-
 ```html
 <button-component success-label="Well done"></button-component>
 ```
 
-<br><br><br>
+<button-component label="Well done" :icon="['fas', 'check']" success></button-component>
+
+---
 
 ### error-label
 
@@ -279,20 +271,21 @@ Error state is triggered by the [promise](#promise) prop.
 
 #### Example
 
-<br>
-<button-component label="Shit happens..." :icon="['fas', 'times']" error></button-component>
-
 ```html
 <button-component error-label="Shit happens..."></button-component>
 ```
 
-<br><br><br>
+<button-component label="Shit happens..." :icon="['fas', 'times']" error></button-component>
+
+---
 
 ## Events
 
 - [click](#click)
 - [onSuccess](#onsuccess)
 - [onError](#onerror)
+
+---
 
 ### click
 
@@ -308,7 +301,7 @@ Listen for click events.
 <button-component @click="yourEvent"></button-component>
 ```
 
-<br><br><br>
+---
 
 ### onSuccess
 
@@ -326,7 +319,7 @@ The success event is triggered by the [promise](#promise) prop.
 <button-component @onSuccess="yourHandler"></button-component>
 ```
 
-<br><br><br>
+---
 
 ### onError
 
