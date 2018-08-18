@@ -19,7 +19,7 @@ module.exports = {
       {
         title: 'Components',
         collapsable: false,
-        children: ['/components/button'],
+        children: ['/components/button', '/components/input'],
       },
     ],
     lastUpdated: 'Last Updated',
