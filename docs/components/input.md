@@ -45,6 +45,18 @@ components: {
 }
 ```
 
+## Slots
+
+This component accepts a default slot. The slot replaces the input element.
+This is very convenient if you need a more complex input element.
+e.g. Google Autocomplete
+
+```html
+<input-component>
+  <google-autocomplete></google-autocomplete>
+</input-component>
+```
+
 ## Props
 
 - [value](#value) `String | Number | Date`

@@ -16,11 +16,11 @@ This package and all it's components depends on an alias named **"node_modules"*
 //webpack.config.js
 module.exports = {
   //...
-  resovle: {
+  resolve: {
     alias: {
-      node_modules: path.resolve('node_modules)
-    }
-  }
+      node_modules: path.resolve('node_modules'),
+    },
+  },
   //...
 }
 ```
