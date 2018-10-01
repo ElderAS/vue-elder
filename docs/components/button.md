@@ -45,6 +45,7 @@ components: {
 - [error](#primary-secondary-warning-success-error) `Boolean`
 - [label](#label) `String`
 - [icon](#icon) `String | Array`
+- [icon-placement](#icon-placement) `String`
 - [loading](#loading) `Boolean`
 - [promise](#promise) `Promise`
 - [state-timeout](#state-timeout) `Number`
@@ -115,6 +116,26 @@ Make sure to [import](https://github.com/FortAwesome/vue-fontawesome#import-the-
 ```
 
 <button-component label="Check me" :icon="['fas', 'check']"></button-component>
+
+---
+
+### icon-placement
+
+- **Type:** `String`
+- **Default:** `right`
+- **Valid values:** `[left, right]`
+
+#### Description
+
+Sets the icon placement.
+
+#### Example
+
+```html
+<button-component label="Check me" icon-placement="left"></button-component>
+```
+
+<button-component label="Check me" icon-placement="left"></button-component>
 
 ---
 
