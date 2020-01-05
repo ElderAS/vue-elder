@@ -11,41 +11,31 @@
 
 ## Usage
 
-### from [vue-elder](https://github.com/ElderAS/vue-elder)
-
 ```js
 // Global installation
-import { InputComponentInstaller } from 'vue-elder'
+import InputInstaller from "vue-elder-input";
 //...
-Vue.use(InputComponentInstaller)
+Vue.use(InputInstaller);
 
 // Local installation
-import { InputComponent } from 'vue-elder'
+import { InputComponent } from "vue-elder-input";
 
 //...
 components: {
-  InputComponent
-}
-```
-
-### from [vue-elder-input](https://github.com/ElderAS/vue-elder-input)
-
-```js
-// Global installation
-import InputInstaller from 'vue-elder-input'
-//...
-Vue.use(InputInstaller)
-
-// Local installation
-import { InputComponent } from 'vue-elder-input'
-
-//...
-components: {
-  InputComponent
+  InputComponent;
 }
 ```
 
 ## Slots
+
+- default
+- left
+- right
+- icon
+- prefix
+- suffix
+- icon
+- validation-message
 
 This component accepts a default slot. The slot replaces the input element.
 This is very convenient if you need a more complex input element.
@@ -61,19 +51,14 @@ e.g. Google Autocomplete
 
 - [value](#value) `String | Number | Date`
 - [label](#label) `String`
-- [type](#type) `String`
-- [disabled](#disabled) `Boolean`
-- [readonly](#readonly) `Boolean`
-- [required](#required) `Boolean`
-- [autofocus](#autofocus) `Boolean`
 - [validate](#validate) `Boolean`
-- [placeholder](#placeholder) `String`
-- [pattern](#pattern) `String`
 - [prefix](#prefix) `String`
 - [suffix](#suffix) `String`
 - [icon](#icon) `String | Array`
 - [align](#align) `String`
 - [mask](#mask) `Object`
+
+**You can use all standard input attributes like: type, placeholder, autofocus, etc.**
 
 ---
 
@@ -118,103 +103,6 @@ Set input label
 
 ---
 
-### type
-
-- **Type:** `String`
-- **Default:** `text`
-
-#### Description
-
-Set the input type. Use regular [html input types](https://www.w3schools.com/html/html_form_input_types.asp)
-
-#### Example
-
-```html
-<input-component type="number" value="1200"></input-component>
-```
-
-<div class="demo">
-  <input-component type="number" value="1200"></input-component>
-</div>
-
----
-
-### disabled
-
-- **Type:** `Boolean`
-- **Default:** `false`
-
-#### Description
-
-Disables the input.
-
-#### Example
-
-```html
-<input-component disabled ></input-component>
-```
-
-<div class="demo">
-<input-component disabled value="I'm disabled"></input-component>
-</div>
-
----
-
-### readonly
-
-- **Type:** `Boolean`
-- **Default:** `false`
-
-#### Description
-
-Makes the input readonly.
-
-#### Example
-
-```html
-<input-component readonly></input-component>
-```
-
-<div class="demo">
-  <input-component readonly value="I'm readonly"></input-component>
-</div>
-
----
-
-### required
-
-- **Type:** `Boolean`
-- **Default:** `false`
-
-#### Description
-
-This specifies that an input field must be filled out before submitting the form.
-If a [#label](label) is set, a red asterisk character will appear.
-
-#### Example
-
-```html
-<input-component required label="Age"></input-component>
-```
-
-<form class="demo">
-  <input-component required label="Age" />
-  <button-component label="Submit" style="margin-top: 1rem" primary/>
-</form>
-
----
-
-### autofocus
-
-- **Type:** `Boolean`
-- **Default:** `false`
-
-#### Description
-
-Set focus on when input loads.
-
----
-
 ### validate
 
 - **Type:** `Boolean`
@@ -234,49 +122,6 @@ Works very well with [required](#required) and [pattern](#pattern).
 <div class="demo">
   <input-component label="Name" required value="John Doe" validate></input-component>
 </div>
-
----
-
-### placeholder
-
-- **Type:** `String`
-- **Default:** `null`
-
-#### Description
-
-Set placeholder for input. Uses [HTML input placeholder attribute](https://www.w3schools.com/tags/att_input_placeholder.asp).
-
-#### Example
-
-```html
-<input-component label="Name" placeholder="Your name..."></input-component>
-```
-
-<div class="demo">
-  <input-component label="Name" placeholder="Your name..."></input-component>
-</div>
-
----
-
-### pattern
-
-- **Type:** `String`
-- **Default:** `null`
-
-#### Description
-
-Set pattern for input validation. Uses [HTML input pattern attribute](https://www.w3schools.com/tags/att_input_pattern.asp). Works very nice together with [validate](#validate).
-
-#### Example
-
-```html
-<input-component label="Name" pattern="[A-Za-z]{3}" validate required></input-component>
-```
-
-<form class="demo">
-  <input-component label="Name" pattern="[A-Za-z]{3}" value="Alf" readonly validate required></input-component>
-  <button-component label="Submit" style="margin-top: 1rem" primary/>
-</form>
 
 ---
 
@@ -336,7 +181,10 @@ Make sure to [import](https://github.com/FortAwesome/vue-fontawesome#import-the-
 #### Example
 
 ```html
-<input-component label="Sample" :icon="['fas', 'check-circle']"></input-component>
+<input-component
+  label="Sample"
+  :icon="['fas', 'check-circle']"
+></input-component>
 ```
 
 <div class="demo">
@@ -380,7 +228,12 @@ Masking is based on [vue-imask](https://github.com/uNmAnNeR/imaskjs) and [imaskj
 #### Example
 
 ```html
-<input-component label="Value" prefix="NOK" type="number" :mask="{ mask: Number, thousandsSeparator: ' ', unmask: true }"></input-component>
+<input-component
+  label="Value"
+  prefix="NOK"
+  type="number"
+  :mask="{ mask: Number, thousandsSeparator: ' ', unmask: true }"
+></input-component>
 ```
 
 <div class="demo">

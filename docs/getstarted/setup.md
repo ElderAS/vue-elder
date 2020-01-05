@@ -1,30 +1,5 @@
 # Setup
 
-## Install package
-
-```
-npm install --save vue-elder
-```
-
-## Requirements
-
-::: danger Important
-This package and all it's components depends on an alias named **"node_modules"** which must point to the node_modules folder.
-:::
-
-```js {6}
-//webpack.config.js
-module.exports = {
-  //...
-  resolve: {
-    alias: {
-      node_modules: path.resolve('node_modules'),
-    },
-  },
-  //...
-}
-```
-
 ## Override default colors, etc...
 
 ```js

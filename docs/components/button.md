@@ -2,47 +2,24 @@
 
 ## Usage
 
-### from [vue-elder](https://github.com/ElderAS/vue-elder)
-
 ```js
 // Global installation
-import { ButtonComponentInstaller } from 'vue-elder'
+import ButtonInstaller from "vue-elder-button";
 //...
-Vue.use(ButtonComponentInstaller)
+Vue.use(ButtonInstaller);
 
 // Local installation
-import { ButtonComponent } from 'vue-elder'
+import { ButtonComponent } from "vue-elder-button";
 
 //...
 components: {
-  ButtonComponent
-}
-```
-
-### from [vue-elder-button](https://github.com/ElderAS/vue-elder-button)
-
-```js
-// Global installation
-import ButtonInstaller from 'vue-elder-button'
-//...
-Vue.use(ButtonInstaller)
-
-// Local installation
-import { ButtonComponent } from 'vue-elder-button'
-
-//...
-components: {
-  ButtonComponent
+  ButtonComponent;
 }
 ```
 
 ## Props
 
-- [primary](#primary-secondary-warning-success-error) `Boolean`
-- [secondary](#primary-secondary-warning-success-error) `Boolean`
-- [warning](#primary-secondary-warning-success-error) `Boolean`
-- [success](#primary-secondary-warning-success-error) `Boolean`
-- [error](#primary-secondary-warning-success-error) `Boolean`
+- [theme](#theme) `String`
 - [label](#label) `String`
 - [icon](#icon) `String | Array`
 - [icon-placement](#icon-placement) `String`
@@ -57,11 +34,11 @@ components: {
 
 ---
 
-### primary (secondary, warning, success, error)
+### theme
 
-- **Type:** `Boolean`
-- **Default:** `false`
-- **Possible prop names:** `[primary, secondary, warning, success, error]`
+- **Type:** `String`
+- **Default:** `default`
+- **Possible values:** `[primary, secondary, warning, success, error, default]`
 
 #### Description
 
@@ -70,11 +47,11 @@ Give button a nice color
 #### Example
 
 ```html
-<button-component label="Primary" primary></button-component>
+<button-component label="Primary" theme="primary"></button-component>
 <button-component label="Default"></button-component>
 ```
 
-<button-component label="Primary" primary></button-component>
+<button-component label="Primary" theme="primary"></button-component>
 <button-component label="Default"></button-component>
 
 ---
@@ -132,10 +109,14 @@ Sets the icon placement.
 #### Example
 
 ```html
-<button-component label="Check me" icon-placement="left"></button-component>
+<button-component
+  label="Check me"
+  icon-placement="left"
+  :icon="['fas', 'check']"
+></button-component>
 ```
 
-<button-component label="Check me" icon-placement="left"></button-component>
+<button-component label="Check me" icon-placement="left" :icon="['fas', 'check']"></button-component>
 
 ---
 
@@ -275,7 +256,7 @@ Success state is triggered by the [promise](#promise) prop.
 <button-component success-label="Well done"></button-component>
 ```
 
-<button-component label="Well done" :icon="['fas', 'check']" success></button-component>
+<button-component label="Well done" :icon="['fas', 'check']" theme="success"></button-component>
 
 ---
 
@@ -296,7 +277,7 @@ Error state is triggered by the [promise](#promise) prop.
 <button-component error-label="Shit happens..."></button-component>
 ```
 
-<button-component label="Shit happens..." :icon="['fas', 'times']" error></button-component>
+<button-component label="Shit happens..." :icon="['fas', 'times']" theme="error"></button-component>
 
 ---
 
