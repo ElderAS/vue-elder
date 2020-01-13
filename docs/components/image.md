@@ -27,10 +27,11 @@ import { ImageComponent, setup } from "vue-elder-image";
 
 setup({
   //Options
-  upload(file, onProgress) {
+  upload(file, onProgress, options) {
     /*
       Write your custom upload function
       Call "onProgress" with a value (0-100) to change the progress
+      "options" is whatever has been set as uploadOptions prop
     */
   },
   serialize(val) {
@@ -67,6 +68,7 @@ components: {
 - [serialize](#serialize) `Function`
 - [size](#size) `String (css: background-size)`
 - [placement](#placement) `String (outside|inside)`
+- [uploadOptions](#uploadOptions) `Object`
 
 ---
 

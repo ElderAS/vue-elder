@@ -22,10 +22,11 @@ import { FileComponent, setup } from "vue-elder-file";
 
 setup({
   //Options
-  upload(file, onProgress) {
+  upload(file, onProgress, options) {
     /*
       Write your custom upload function
       Call "onProgress" with a value (0-100) to change the progress
+      "options" is whatever has been set as uploadOptions prop
     */
   },
   serialize(val) {
@@ -65,6 +66,7 @@ components: {
 - [rename](#rename) `String | Boolean`
 - [upload](#upload) `Function`
 - [serialize](#serialize) `Function`
+- [uploadOptions](#uploadOptions) `Object`
 
 ---
 
