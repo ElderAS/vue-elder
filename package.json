@@ -45,6 +45,7 @@
     "vue-elder-file": "^1.1.1",
     "vue-elder-image": "^1.2.0",
     "vue-elder-input": "^1.4.2",
+    "vue-elder-loader": "^1.0.0",
     "vue-elder-navigation": "^1.6.5"
   }
 }

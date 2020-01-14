@@ -24,7 +24,8 @@ module.exports = {
           "/components/input",
           "/components/file",
           "/components/image",
-          "/components/navigation"
+          "/components/navigation",
+          "/components/loader"
         ]
       }
     ],
